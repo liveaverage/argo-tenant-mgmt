@@ -1,0 +1,3066 @@
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  name: admin-custom-noroute
+rules:
+- apiGroups:
+  - enmasse.io
+  resources:
+  - addresses
+  verbs:
+  - '*'
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - addressplans
+  verbs:
+  - '*'
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - addressspaceplans
+  verbs:
+  - '*'
+- apiGroups:
+  - enmasse.io
+  resources:
+  - addressspaces
+  verbs:
+  - '*'
+- apiGroups:
+  - enmasse.io
+  resources:
+  - addressspaceschemas
+  verbs:
+  - '*'
+- apiGroups:
+  - operators.coreos.com
+  resources:
+  - subscriptions
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - operators.coreos.com
+  resources:
+  - clusterserviceversions
+  - catalogsources
+  - installplans
+  - subscriptions
+  verbs:
+  - delete
+- apiGroups:
+  - operators.coreos.com
+  resources:
+  - clusterserviceversions
+  - catalogsources
+  - installplans
+  - subscriptions
+  - operatorgroups
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - packages.operators.coreos.com
+  resources:
+  - packagemanifests
+  - packagemanifests/icon
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - alertmanagerconfigs
+  verbs:
+  - '*'
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - alertmanagers
+  verbs:
+  - '*'
+- apiGroups:
+  - argoproj.io
+  resources:
+  - applications
+  verbs:
+  - '*'
+- apiGroups:
+  - argoproj.io
+  resources:
+  - applicationsets
+  verbs:
+  - '*'
+- apiGroups:
+  - argoproj.io
+  resources:
+  - appprojects
+  verbs:
+  - '*'
+- apiGroups:
+  - argoproj.io
+  resources:
+  - argocdexports
+  verbs:
+  - '*'
+- apiGroups:
+  - argoproj.io
+  resources:
+  - argocds
+  verbs:
+  - '*'
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - authenticationservices
+  verbs:
+  - '*'
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - brokeredinfraconfigs
+  verbs:
+  - '*'
+- apiGroups:
+  - cert-manager.io
+  resources:
+  - certificates
+  - certificaterequests
+  - issuers
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - patch
+  - update
+- apiGroups:
+  - cert-manager.io
+  resources:
+  - certificates
+  - certificaterequests
+  - issuers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - logging.openshift.io
+  resources:
+  - clusterlogforwarders
+  verbs:
+  - '*'
+- apiGroups:
+  - logging.openshift.io
+  resources:
+  - clusterloggings
+  verbs:
+  - '*'
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - compliancecheckresults
+  verbs:
+  - '*'
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - complianceremediations
+  verbs:
+  - '*'
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - compliancescans
+  verbs:
+  - '*'
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - compliancesuites
+  verbs:
+  - '*'
+- apiGroups:
+  - operator.tekton.dev
+  resources:
+  - config
+  verbs:
+  - '*'
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - consoleservices
+  verbs:
+  - '*'
+- apiGroups:
+  - crdb.cockroachlabs.com
+  resources:
+  - crdbclusters
+  verbs:
+  - '*'
+- apiGroups:
+  - enmasse.io
+  resources:
+  - addresses
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - addressplans
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - addressspaceplans
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - enmasse.io
+  resources:
+  - addressspaces
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - enmasse.io
+  resources:
+  - addressspaceschemas
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - alertmanagerconfigs
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - alertmanagers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - argoproj.io
+  resources:
+  - applications
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - argoproj.io
+  resources:
+  - applicationsets
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - argoproj.io
+  resources:
+  - appprojects
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - argoproj.io
+  resources:
+  - argocdexports
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - argoproj.io
+  resources:
+  - argocds
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - authenticationservices
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - brokeredinfraconfigs
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - logging.openshift.io
+  resources:
+  - clusterlogforwarders
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - logging.openshift.io
+  resources:
+  - clusterloggings
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - compliancecheckresults
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - complianceremediations
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - compliancescans
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - compliancesuites
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - operator.tekton.dev
+  resources:
+  - config
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - consoleservices
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - crdb.cockroachlabs.com
+  resources:
+  - crdbclusters
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - logging.openshift.io
+  resources:
+  - elasticsearches
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - enmasse.io
+  resources:
+  - addressspaceschemas
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - enmasse.io
+  resources:
+  - addresses
+  - addressspaces
+  verbs:
+  - create
+  - get
+  - update
+  - delete
+  - list
+  - watch
+  - patch
+- apiGroups:
+  - enmasse.io
+  resources:
+  - addressspaceschemas
+  verbs:
+  - get
+  - list
+- apiGroups:
+  - user.enmasse.io
+  resources:
+  - messagingusers
+  verbs:
+  - create
+  - get
+  - update
+  - delete
+  - list
+  - watch
+  - patch
+- apiGroups:
+  - integreatly.org
+  resources:
+  - grafanadashboards
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - integreatly.org
+  resources:
+  - grafanadatasources
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - integreatly.org
+  resources:
+  - grafanas
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - authentication.istio.io
+  - config.istio.io
+  - networking.istio.io
+  - rbac.istio.io
+  - security.istio.io
+  - authentication.maistra.io
+  - rbac.maistra.io
+  resources:
+  - '*'
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - maistra.io
+  resources:
+  - servicemeshextensions
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - jaegertracing.io
+  resources:
+  - jaegers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkabridges
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkaconnectors
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkaconnects
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkaconnects2is
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkamirrormaker2s
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkamirrormakers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkarebalances
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkas
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkatopics
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkausers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kfdef.apps.kubeflow.org
+  resources:
+  - kfdefs
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kiali.io
+  resources:
+  - kialis
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - logging.openshift.io
+  resources:
+  - kibanas
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - user.enmasse.io
+  resources:
+  - messagingusers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - monitoring.kiali.io
+  resources:
+  - monitoringdashboards
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - k8s.nginx.org
+  resources:
+  - nginxingresscontrollers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - packages.operators.coreos.com
+  resources:
+  - packagemanifests
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - podmonitors
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - probes
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - profilebundles
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - profiles
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - prometheuses
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - prometheusrules
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  - serviceaccounts
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  - image.openshift.io
+  resources:
+  - imagestreamimages
+  - imagestreammappings
+  - imagestreams
+  - imagestreams/secrets
+  - imagestreamtags
+  - imagetags
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  - image.openshift.io
+  resources:
+  - imagestreamimports
+  verbs:
+  - create
+- apiGroups:
+  - ""
+  - image.openshift.io
+  resources:
+  - imagestreams/layers
+  verbs:
+  - get
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
+- apiGroups:
+  - ""
+  - project.openshift.io
+  resources:
+  - projects
+  verbs:
+  - get
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - rules
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - scansettingbindings
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - scansettings
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - machinelearning.seldon.io
+  resources:
+  - seldondeployments
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - maistra.io
+  resources:
+  - servicemeshcontrolplanes
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - maistra.io
+  resources:
+  - servicemeshmemberrolls
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - maistra.io
+  resources:
+  - servicemeshmembers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - servicemonitors
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - radanalytics.io
+  resources:
+  - sparkapplications
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - radanalytics.io
+  resources:
+  - sparkclusters
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - radanalytics.io
+  resources:
+  - sparkhistoryservers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - standardinfraconfigs
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ""
+  resources:
+  - pods/attach
+  - pods/exec
+  - pods/portforward
+  - pods/proxy
+  - secrets
+  - services/proxy
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - serviceaccounts
+  verbs:
+  - impersonate
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - pods/attach
+  - pods/exec
+  - pods/portforward
+  - pods/proxy
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - patch
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - endpoints
+  - persistentvolumeclaims
+  - replicationcontrollers
+  - replicationcontrollers/scale
+  - secrets
+  - serviceaccounts
+  - services
+  - services/proxy
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - patch
+  - update
+- apiGroups:
+  - apps
+  resources:
+  - daemonsets
+  - deployments
+  - deployments/rollback
+  - deployments/scale
+  - replicasets
+  - replicasets/scale
+  - statefulsets
+  - statefulsets/scale
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - patch
+  - update
+- apiGroups:
+  - autoscaling
+  resources:
+  - horizontalpodautoscalers
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - patch
+  - update
+- apiGroups:
+  - batch
+  resources:
+  - cronjobs
+  - jobs
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - patch
+  - update
+- apiGroups:
+  - extensions
+  resources:
+  - daemonsets
+  - deployments
+  - deployments/rollback
+  - deployments/scale
+  - ingresses
+  - networkpolicies
+  - replicasets
+  - replicasets/scale
+  - replicationcontrollers/scale
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - patch
+  - update
+- apiGroups:
+  - policy
+  resources:
+  - poddisruptionbudgets
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - patch
+  - update
+- apiGroups:
+  - networking.k8s.io
+  resources:
+  - ingresses
+  - networkpolicies
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - patch
+  - update
+- apiGroups:
+  - metrics.k8s.io
+  resources:
+  - pods
+  - nodes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - image.openshift.io
+  resources:
+  - imagestreams
+  verbs:
+  - create
+- apiGroups:
+  - ""
+  - build.openshift.io
+  resources:
+  - builds/details
+  verbs:
+  - update
+- apiGroups:
+  - ""
+  - build.openshift.io
+  resources:
+  - builds
+  verbs:
+  - get
+- apiGroups:
+  - snapshot.storage.k8s.io
+  resources:
+  - volumesnapshots
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+  - deletecollection
+- apiGroups:
+  - ""
+  - build.openshift.io
+  resources:
+  - buildconfigs
+  - buildconfigs/webhooks
+  - builds
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  - build.openshift.io
+  resources:
+  - builds/log
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - build.openshift.io
+  resources:
+  - buildconfigs/instantiate
+  - buildconfigs/instantiatebinary
+  - builds/clone
+  verbs:
+  - create
+- apiGroups:
+  - build.openshift.io
+  resources:
+  - jenkins
+  verbs:
+  - edit
+  - view
+- apiGroups:
+  - ""
+  - apps.openshift.io
+  resources:
+  - deploymentconfigs
+  - deploymentconfigs/scale
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  - apps.openshift.io
+  resources:
+  - deploymentconfigrollbacks
+  - deploymentconfigs/instantiate
+  - deploymentconfigs/rollback
+  verbs:
+  - create
+- apiGroups:
+  - ""
+  - apps.openshift.io
+  resources:
+  - deploymentconfigs/log
+  - deploymentconfigs/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - image.openshift.io
+  resources:
+  - imagestreams/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - quota.openshift.io
+  resources:
+  - appliedclusterresourcequotas
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - route.openshift.io
+  resources:
+  - routes
+  verbs:
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  - route.openshift.io
+  resources:
+  - routes/custom-host
+  verbs:
+  - create
+- apiGroups:
+  - ""
+  - route.openshift.io
+  resources:
+  - routes/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - template.openshift.io
+  resources:
+  - processedtemplates
+  - templateconfigs
+  - templateinstances
+  - templates
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - extensions
+  - networking.k8s.io
+  resources:
+  - networkpolicies
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  - build.openshift.io
+  resources:
+  - buildlogs
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - resourcequotausages
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - tailoredprofiles
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - tekton.dev
+  resources:
+  - tasks
+  - taskruns
+  - pipelines
+  - pipelineruns
+  - pipelineresources
+  - conditions
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - triggers.tekton.dev
+  resources:
+  - triggers
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - triggers.tekton.dev
+  resources:
+  - clustertriggerbindings
+  - eventlisteners
+  - triggerbindings
+  - triggertemplates
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - thanosrulers
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - variables
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - addresses.enmasse.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - enmasse.io
+  resources:
+  - addresses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - addressplans.admin.enmasse.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - addressplans
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - addressspaceplans.admin.enmasse.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - addressspaceplans
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - addressspaces.enmasse.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - enmasse.io
+  resources:
+  - addressspaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - addressspaceschemas.enmasse.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - alertmanagerconfigs.monitoring.coreos.com
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - alertmanagerconfigs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - alertmanagers.monitoring.coreos.com
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - alertmanagers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - applications.argoproj.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - argoproj.io
+  resources:
+  - applications
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - applicationsets.argoproj.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - argoproj.io
+  resources:
+  - applicationsets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - appprojects.argoproj.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - argoproj.io
+  resources:
+  - appprojects
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - argocdexports.argoproj.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - argoproj.io
+  resources:
+  - argocdexports
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - argocds.argoproj.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - argoproj.io
+  resources:
+  - argocds
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - authenticationservices.admin.enmasse.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - authenticationservices
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - brokeredinfraconfigs.admin.enmasse.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - brokeredinfraconfigs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - clusterlogforwarders.logging.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - logging.openshift.io
+  resources:
+  - clusterlogforwarders
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - clusterloggings.logging.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - logging.openshift.io
+  resources:
+  - clusterloggings
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - compliancecheckresults.compliance.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - compliancecheckresults
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - complianceremediations.compliance.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - complianceremediations
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - compliancescans.compliance.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - compliancescans
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - compliancesuites.compliance.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - compliancesuites
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - config.operator.tekton.dev
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - operator.tekton.dev
+  resources:
+  - config
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - consoleservices.admin.enmasse.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - consoleservices
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - crdbclusters.crdb.cockroachlabs.com
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - crdb.cockroachlabs.com
+  resources:
+  - crdbclusters
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - elasticsearches.logging.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - logging.openshift.io
+  resources:
+  - elasticsearches
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - enmasse.io
+  resources:
+  - addresses
+  - addressspaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - user.enmasse.io
+  resources:
+  - messagingusers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - grafanadashboards.integreatly.org
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - integreatly.org
+  resources:
+  - grafanadashboards
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - grafanadatasources.integreatly.org
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - integreatly.org
+  resources:
+  - grafanadatasources
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - grafanas.integreatly.org
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - integreatly.org
+  resources:
+  - grafanas
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - authentication.istio.io
+  - config.istio.io
+  - networking.istio.io
+  - rbac.istio.io
+  - security.istio.io
+  - authentication.maistra.io
+  - rbac.maistra.io
+  resources:
+  - '*'
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - maistra.io
+  resources:
+  - servicemeshextensions
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - jaegers.jaegertracing.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - jaegertracing.io
+  resources:
+  - jaegers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kafkabridges.kafka.strimzi.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkabridges
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kafkaconnectors.kafka.strimzi.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkaconnectors
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kafkaconnects.kafka.strimzi.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkaconnects
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kafkaconnects2is.kafka.strimzi.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkaconnects2is
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kafkamirrormaker2s.kafka.strimzi.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkamirrormaker2s
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kafkamirrormakers.kafka.strimzi.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkamirrormakers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kafkarebalances.kafka.strimzi.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkarebalances
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kafkas.kafka.strimzi.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkas
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kafkatopics.kafka.strimzi.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkatopics
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kafkausers.kafka.strimzi.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkausers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kfdefs.kfdef.apps.kubeflow.org
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - kfdef.apps.kubeflow.org
+  resources:
+  - kfdefs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kialis.kiali.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - kiali.io
+  resources:
+  - kialis
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - kibanas.logging.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - logging.openshift.io
+  resources:
+  - kibanas
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - messagingusers.user.enmasse.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - monitoringdashboards.monitoring.kiali.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - monitoring.kiali.io
+  resources:
+  - monitoringdashboards
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - nginxingresscontrollers.k8s.nginx.org
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - k8s.nginx.org
+  resources:
+  - nginxingresscontrollers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - packages.operators.coreos.com
+  resources:
+  - packagemanifests
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - podmonitors.monitoring.coreos.com
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - podmonitors
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - probes.monitoring.coreos.com
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - probes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - profilebundles.compliance.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - profilebundles
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - profiles.compliance.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - profiles
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - prometheuses.monitoring.coreos.com
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - prometheuses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - prometheusrules.monitoring.coreos.com
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - prometheusrules
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - image.openshift.io
+  resources:
+  - imagestreamimages
+  - imagestreammappings
+  - imagestreams
+  - imagestreamtags
+  - imagetags
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - image.openshift.io
+  resources:
+  - imagestreams/layers
+  verbs:
+  - get
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - rules.compliance.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - rules
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - scansettingbindings.compliance.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - scansettingbindings
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - scansettings.compliance.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - scansettings
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - seldondeployments.machinelearning.seldon.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - machinelearning.seldon.io
+  resources:
+  - seldondeployments
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - servicemeshcontrolplanes.maistra.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - maistra.io
+  resources:
+  - servicemeshcontrolplanes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - servicemeshmemberrolls.maistra.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - maistra.io
+  resources:
+  - servicemeshmemberrolls
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - servicemeshmembers.maistra.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - maistra.io
+  resources:
+  - servicemeshmembers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - servicemonitors.monitoring.coreos.com
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - servicemonitors
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - sparkapplications.radanalytics.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - radanalytics.io
+  resources:
+  - sparkapplications
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - sparkclusters.radanalytics.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - radanalytics.io
+  resources:
+  - sparkclusters
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - sparkhistoryservers.radanalytics.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - radanalytics.io
+  resources:
+  - sparkhistoryservers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - standardinfraconfigs.admin.enmasse.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - standardinfraconfigs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - endpoints
+  - persistentvolumeclaims
+  - persistentvolumeclaims/status
+  - pods
+  - replicationcontrollers
+  - replicationcontrollers/scale
+  - serviceaccounts
+  - services
+  - services/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - bindings
+  - events
+  - limitranges
+  - namespaces/status
+  - pods/log
+  - pods/status
+  - replicationcontrollers/status
+  - resourcequotas
+  - resourcequotas/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - controllerrevisions
+  - daemonsets
+  - daemonsets/status
+  - deployments
+  - deployments/scale
+  - deployments/status
+  - replicasets
+  - replicasets/scale
+  - replicasets/status
+  - statefulsets
+  - statefulsets/scale
+  - statefulsets/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - autoscaling
+  resources:
+  - horizontalpodautoscalers
+  - horizontalpodautoscalers/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - batch
+  resources:
+  - cronjobs
+  - cronjobs/status
+  - jobs
+  - jobs/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - extensions
+  resources:
+  - daemonsets
+  - daemonsets/status
+  - deployments
+  - deployments/scale
+  - deployments/status
+  - ingresses
+  - ingresses/status
+  - networkpolicies
+  - replicasets
+  - replicasets/scale
+  - replicasets/status
+  - replicationcontrollers/scale
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - policy
+  resources:
+  - poddisruptionbudgets
+  - poddisruptionbudgets/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - networking.k8s.io
+  resources:
+  - ingresses
+  - ingresses/status
+  - networkpolicies
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - snapshot.storage.k8s.io
+  resources:
+  - volumesnapshots
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - build.openshift.io
+  resources:
+  - buildconfigs
+  - buildconfigs/webhooks
+  - builds
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - build.openshift.io
+  resources:
+  - jenkins
+  verbs:
+  - view
+- apiGroups:
+  - ""
+  - apps.openshift.io
+  resources:
+  - deploymentconfigs
+  - deploymentconfigs/scale
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - route.openshift.io
+  resources:
+  - routes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - template.openshift.io
+  resources:
+  - processedtemplates
+  - templateconfigs
+  - templateinstances
+  - templates
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - build.openshift.io
+  resources:
+  - buildlogs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - tailoredprofiles.compliance.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - tailoredprofiles
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - tekton.dev
+  resources:
+  - tasks
+  - taskruns
+  - pipelines
+  - pipelineruns
+  - pipelineresources
+  - conditions
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - tekton.dev
+  resources:
+  - clustertasks
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - triggers.tekton.dev
+  resources:
+  - clustertriggerbindings
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - triggers.tekton.dev
+  resources:
+  - triggers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - triggers.tekton.dev
+  resources:
+  - clustertriggerbindings
+  - eventlisteners
+  - triggerbindings
+  - triggertemplates
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - thanosrulers.monitoring.coreos.com
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - thanosrulers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - variables.compliance.openshift.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - variables
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apiextensions.k8s.io
+  resourceNames:
+  - xcrypts.xcrypt.zettaset.com
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - xcrypt.zettaset.com
+  resources:
+  - xcrypts
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - xcrypt.zettaset.com
+  resources:
+  - xcrypts
+  verbs:
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - logging.openshift.io
+  resources:
+  - elasticsearches
+  verbs:
+  - '*'
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - addressplans
+  - addressspaceplans
+  - brokeredinfraconfigs
+  - standardinfraconfigs
+  - authenticationservices
+  verbs:
+  - create
+  - get
+  - update
+  - delete
+  - list
+  - watch
+  - patch
+- apiGroups:
+  - integreatly.org
+  resources:
+  - grafanadashboards
+  verbs:
+  - '*'
+- apiGroups:
+  - integreatly.org
+  resources:
+  - grafanadatasources
+  verbs:
+  - '*'
+- apiGroups:
+  - integreatly.org
+  resources:
+  - grafanas
+  verbs:
+  - '*'
+- apiGroups:
+  - authentication.istio.io
+  - config.istio.io
+  - networking.istio.io
+  - rbac.istio.io
+  - security.istio.io
+  - authentication.maistra.io
+  - rbac.maistra.io
+  resources:
+  - '*'
+  verbs:
+  - '*'
+- apiGroups:
+  - maistra.io
+  resources:
+  - servicemeshextensions
+  verbs:
+  - '*'
+- apiGroups:
+  - jaegertracing.io
+  resources:
+  - jaegers
+  verbs:
+  - '*'
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkabridges
+  verbs:
+  - '*'
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkaconnectors
+  verbs:
+  - '*'
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkaconnects
+  verbs:
+  - '*'
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkaconnects2is
+  verbs:
+  - '*'
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkamirrormaker2s
+  verbs:
+  - '*'
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkamirrormakers
+  verbs:
+  - '*'
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkarebalances
+  verbs:
+  - '*'
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkas
+  verbs:
+  - '*'
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkatopics
+  verbs:
+  - '*'
+- apiGroups:
+  - kafka.strimzi.io
+  resources:
+  - kafkausers
+  verbs:
+  - '*'
+- apiGroups:
+  - kfdef.apps.kubeflow.org
+  resources:
+  - kfdefs
+  verbs:
+  - '*'
+- apiGroups:
+  - kiali.io
+  resources:
+  - kialis
+  verbs:
+  - '*'
+- apiGroups:
+  - logging.openshift.io
+  resources:
+  - kibanas
+  verbs:
+  - '*'
+- apiGroups:
+  - user.enmasse.io
+  resources:
+  - messagingusers
+  verbs:
+  - '*'
+- apiGroups:
+  - monitoring.kiali.io
+  resources:
+  - monitoringdashboards
+  verbs:
+  - '*'
+- apiGroups:
+  - k8s.nginx.org
+  resources:
+  - nginxingresscontrollers
+  verbs:
+  - '*'
+- apiGroups:
+  - packages.operators.coreos.com
+  resources:
+  - packagemanifests
+  verbs:
+  - '*'
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - podmonitors
+  verbs:
+  - '*'
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - probes
+  verbs:
+  - '*'
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - profilebundles
+  verbs:
+  - '*'
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - profiles
+  verbs:
+  - '*'
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - prometheuses
+  verbs:
+  - '*'
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - prometheusrules
+  verbs:
+  - '*'
+- apiGroups:
+  - ""
+  - authorization.openshift.io
+  resources:
+  - rolebindings
+  - roles
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - rbac.authorization.k8s.io
+  resources:
+  - rolebindings
+  - roles
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  - authorization.openshift.io
+  resources:
+  - localresourceaccessreviews
+  - localsubjectaccessreviews
+  - subjectrulesreviews
+  verbs:
+  - create
+- apiGroups:
+  - authorization.k8s.io
+  resources:
+  - localsubjectaccessreviews
+  verbs:
+  - create
+- apiGroups:
+  - ""
+  - project.openshift.io
+  resources:
+  - projects
+  verbs:
+  - delete
+  - get
+- apiGroups:
+  - ""
+  - authorization.openshift.io
+  resources:
+  - resourceaccessreviews
+  - subjectaccessreviews
+  verbs:
+  - create
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - rules
+  verbs:
+  - '*'
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - scansettingbindings
+  verbs:
+  - '*'
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - scansettings
+  verbs:
+  - '*'
+- apiGroups:
+  - machinelearning.seldon.io
+  resources:
+  - seldondeployments
+  verbs:
+  - '*'
+- apiGroups:
+  - maistra.io
+  resources:
+  - servicemeshcontrolplanes
+  verbs:
+  - '*'
+- apiGroups:
+  - maistra.io
+  resources:
+  - servicemeshmemberrolls
+  verbs:
+  - '*'
+- apiGroups:
+  - maistra.io
+  resources:
+  - servicemeshmembers
+  verbs:
+  - '*'
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - servicemonitors
+  verbs:
+  - '*'
+- apiGroups:
+  - radanalytics.io
+  resources:
+  - sparkapplications
+  verbs:
+  - '*'
+- apiGroups:
+  - radanalytics.io
+  resources:
+  - sparkclusters
+  verbs:
+  - '*'
+- apiGroups:
+  - radanalytics.io
+  resources:
+  - sparkhistoryservers
+  verbs:
+  - '*'
+- apiGroups:
+  - admin.enmasse.io
+  resources:
+  - standardinfraconfigs
+  verbs:
+  - '*'
+- apiGroups:
+  - ""
+  - security.openshift.io
+  resources:
+  - podsecuritypolicyreviews
+  - podsecuritypolicyselfsubjectreviews
+  - podsecuritypolicysubjectreviews
+  verbs:
+  - create
+- apiGroups:
+  - ""
+  - authorization.openshift.io
+  resources:
+  - rolebindingrestrictions
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - build.openshift.io
+  resources:
+  - jenkins
+  verbs:
+  - admin
+  - edit
+  - view
+- apiGroups:
+  - ""
+  - project.openshift.io
+  resources:
+  - projects
+  verbs:
+  - delete
+  - get
+  - patch
+  - update
+- apiGroups:
+  - ""
+  - route.openshift.io
+  resources:
+  - routes/status
+  verbs:
+  - update
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - tailoredprofiles
+  verbs:
+  - '*'
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - thanosrulers
+  verbs:
+  - '*'
+- apiGroups:
+  - compliance.openshift.io
+  resources:
+  - variables
+  verbs:
+  - '*'
+- apiGroups:
+  - xcrypt.zettaset.com
+  resources:
+  - xcrypts
+  verbs:
+  - '*'
