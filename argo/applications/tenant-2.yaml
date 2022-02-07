@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: project-tenant-2
+spec:
+  destination:
+    name: ''
+    namespace: tenant-2
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: tenant-2
+    repoURL: 'https://github.com/liveaverage/argo-tenant-mgmt.git'
+    targetRevision: main
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
