@@ -6,9 +6,9 @@ spec:
   hard:
     configmaps: "20" 
     persistentvolumeclaims: "4" 
-    replicationcontrollers: "20" 
-    secrets: "10" 
-    services: "10" 
+    replicationcontrollers: "30" 
+    secrets: "100" 
+    services: "100" 
     services.loadbalancers: "2"
     requests.cpu: "3"
     requests.memory: 3Gi
