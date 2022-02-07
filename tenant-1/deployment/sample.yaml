@@ -17,6 +17,8 @@ spec:
         deployment: httpbin
       annotations:
         version: v1alpha
+        sidecar.istio.io/inject: 'true'
+        sidecar.istio.io/rewriteAppHTTPProbers: 'true'
     spec:
       containers:
         - name: httpbin
