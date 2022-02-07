@@ -9,4 +9,8 @@ spec:
     replicationcontrollers: "20" 
     secrets: "10" 
     services: "10" 
-    services.loadbalancers: "2" 
+    services.loadbalancers: "2"
+    requests.cpu: "3"
+    requests.memory: 3Gi
+    limits.cpu: "3"
+    limits.memory: 6Gi
